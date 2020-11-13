@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /cointegrador
+spring:
+  application:
+    name: cointegrador
+  main:
+    banner-mode: "off"
+  #username: ${RABBITMQ_TRANSACTION_USR}
+  #password: ${RABBITMQ_TRANSACTION_PWD}
+  #host: ${RABBITMQ_TRANSACTION_HOST}
+  #port: ${RABBITMQ_TRANSACTION_PORT}
+logging:
+  file: C:/logs/coclientes/logs/coclientes.log
+  pattern:
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    root: ERROR
+    org.springframework.web: INFO
+    org.hibernate: INFO
+    springfox.documentation: INFO
+    com.zaxxer.hikari: INFO
+    org.springframework.data: DEBUG
+    org.hibernate.engine.jdbc.spi: WARN
+    com.arjuna.ats.arjuna: WARN
+    org.hibernate.internal: ERROR
+    org.hibernate.engine.jdbc.batch.internal: INFO
+hostmc:
+  port: 6078
+  ip: 172.25.22.24
+  port2: 19000
+  ip2: 127.0.0.1
+  port3: 6092
+  ip3: 172.25.22.24
+# Message Queue specific configs
+ampq:
+  exchange:
+    name: financieraoh-logging-exchange
+  queue:
+    name: financieraoh-logging
+  routing:
+    key: api-logging-service
